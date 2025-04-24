@@ -1,0 +1,139 @@
+# Java Loops - Comprehensive Notes
+
+==================================================
+➤ What are Loops?
+--------------------------------------------------
+Loops in Java are used to execute a block of code repeatedly, 
+as long as a certain condition is true. They are useful for 
+avoiding repetition and automating tasks that need to be repeated.
+
+==================================================
+➤ Types of Loops in Java
+--------------------------------------------------
+
+1. for loop
+-----------
+Used when the number of iterations is known.
+
+Syntax:
+    for (initialization; condition; update) {
+        // code to be executed
+    }
+
+Example:
+    for (int i = 0; i < 5; i++) {
+        System.out.println("Hello");
+    }
+
+--------------------------------------------------
+
+2. while loop
+-------------
+Used when the number of iterations is not known 
+and depends on a condition.
+
+Syntax:
+    while (condition) {
+        // code to be executed
+    }
+
+Example:
+    int i = 0;
+    while (i < 5) {
+        System.out.println(i);
+        i++;
+    }
+
+--------------------------------------------------
+
+3. do-while loop
+----------------
+Similar to `while`, but ensures the block runs at least once.
+
+Syntax:
+    do {
+        // code to be executed
+    } while (condition);
+
+Example:
+    int i = 0;
+    do {
+        System.out.println(i);
+        i++;
+    } while (i < 5);
+
+==================================================
+➤ Loop Control Statements
+--------------------------------------------------
+
+1. break
+--------
+Used to exit a loop before it naturally ends.
+
+Example:
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) break;
+        System.out.println(i);
+    }
+
+2. continue
+-----------
+Skips the current iteration and moves to the next.
+
+Example:
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) continue;
+        System.out.println(i);
+    }
+
+==================================================
+➤ Nested Loops
+--------------------------------------------------
+Loops inside other loops are called nested loops.
+
+Example:
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 2; j++) {
+            System.out.println("i = " + i + ", j = " + j);
+        }
+    }
+
+==================================================
+➤ Enhanced for Loop (for-each)
+--------------------------------------------------
+Used to iterate over arrays or collections.
+
+Syntax:
+    for (type var : array) {
+        // code
+    }
+
+Example:
+    int[] numbers = {1, 2, 3};
+    for (int num : numbers) {
+        System.out.println(num);
+    }
+
+==================================================
+➤ Bonus: Creating Centered Pyramids in Java
+--------------------------------------------------
+From Java 11, `String.repeat(int count)` can be used to 
+repeat characters easily.
+
+Example - Centered Pyramid:
+    int height = 5;
+    for (int e = 1; e <= height; e++) {
+        System.out.print(" ".repeat(height - e));
+        System.out.println("#".repeat(2 * e - 1));
+    }
+
+Explanation:
+- `height` defines the number of rows.
+- `" ".repeat(height - e)` adds spaces to center-align the pyramid.
+- `"#".repeat(2 * e - 1)` prints an odd number of hashes per level.
+
+Level Output:
+    Level 1 → 1 hash
+    Level 2 → 3 hashes
+    Level 3 → 5 hashes
+    ...
